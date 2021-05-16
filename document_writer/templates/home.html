@@ -10,15 +10,16 @@
 <h1>DOCUMENT WRITER</h1>
 <h2>DOCUMENTS</h2>
 <table style="text-align:center;">
-    <a href="" class="stretched-link p-3">HOME🏠</a><br>
-    <a href="" class="stretched-link p-3">NEW📂</a>
+    <a href="" class="link p-3">HOME🏠</a>
+    <br>
+    <a href="" class="link p-3">NEW📂</a>
 </table>
 <input type="text" placeholder="search..." class="m-3 ml-4 p-2" style="width:10cm;"> <button class="btn btn-primary" type="submit">SEARCH</button>
 <br>
 {%for doc in document %}
 <div class="card mb-3">
   <div class="card-body">
-    <a class="card-link">{{doc.doc_name}}</a>
+    <a class="card-link" href="{{doc.get_absolute_url}}">{{doc.doc_name}}</a>
     <p class="card-text">{{doc.about}}</p>
     <p class="card-text"><small class="text-muted">Created on {{doc.created}}</small></p>
     <p class="card-text"><small class="text-muted">Last updated {{doc.updated}}</small></p>

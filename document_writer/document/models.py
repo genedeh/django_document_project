@@ -3,6 +3,9 @@ from random import randint
 
 
 # Create your models here.
+from django.urls import reverse
+
+
 class Document(models.Model):
     doc_name = models.CharField(verbose_name="document_name", default=f"Document{randint(1029283, 918829102832123)}",
                                 max_length=120, blank=True, unique=True)
@@ -14,3 +17,6 @@ class Document(models.Model):
 
     def __str__(self):
         return f"{self.doc_name} created on {self.created} updated on {self.updated}"
+
+    def get_absolute_url(self):
+        return reverse('document:detail', kwargs={'pk': self.pk})
