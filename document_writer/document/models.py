@@ -11,3 +11,6 @@ class Document(models.Model):
     doc_img = models.ImageField(default="doc_image.png", verbose_name="document_img")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.doc_name} created on {self.created} updated on {self.updated}"
