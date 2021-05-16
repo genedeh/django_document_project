@@ -7,7 +7,22 @@
 </head>
 <body>
 {% block content %}
-{{hello}}
+<h1>DOCUMENT WRITER</h1>
+<h2>DOCUMENTS</h2>
+<table>
+    <a href="">HOME🏠</a><br>
+    <a href="">NEW📂</a>
+</table>
+<input type="text" placeholder="search🔎" class="m-3 ml-4 p-2" style="width:10cm;"><button class="btn btn-primary">SEARCH</button>
+<br>
+<em style="margin-left:1cm" >Document name</em> <em style="margin-left:10cm">Date of creation</em>
+<hr>
+
+{%for doc in document %}
+<div class="card mb-3">
+    <img src="media/{{doc.doc_img}}" alt="" width="50" height="50"><a href="{{obj.get_absolute_url}}" class="card-body">{{doc.doc_name}}</a> <b>{{doc.created}}</b>
+</div>
+{%endfor%}
 {% endblock content %}
 </body>
 </html>
