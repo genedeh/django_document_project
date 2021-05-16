@@ -1,6 +1,8 @@
 from django.urls import path
-from django.views.generic import DetailView
+from .views import home_view
 
-app_name = "store"
+app_name = "document"
 
-urlpatterns = []
+urlpatterns = [
+    path('', home_view, name="home")
+]
