@@ -9,29 +9,19 @@
 {% block content %}
 <h1>DOCUMENT WRITER</h1>
 <h2>DOCUMENTS</h2>
-<table>
-    <a href="" style="font-size:1cm;">HOME🏠</a><br>
-    <a href="" style="font-size:1cm;">NEW📂</a>
+<table style="text-align:center;">
+    <a href="" class="stretched-link p-3">HOME🏠</a><br>
+    <a href="" class="stretched-link p-3">NEW📂</a>
 </table>
-<input type="text" placeholder="search🔎" class="m-3 ml-4 p-2" style="width:10cm;"><button class="btn btn-primary" type="submit">SEARCH</button>
+<input type="text" placeholder="search..." class="m-3 ml-4 p-2" style="width:10cm;"> <button class="btn btn-primary" type="submit">SEARCH</button>
 <br>
-<em style="margin-left:1cm" >Document name</em> <em style="margin-left:10cm">Date of creation</em>
-<hr>
-
 {%for doc in document %}
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="/media/{{doc.doc_img}}" class="card-img" alt="..." width="50" height="300">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <a class="card-title" style="font-size:20px">{{doc.doc_name}}</a>
-        <p class="card-text">{{doc.about}}</p>
-        <p class="card-text"><small class="text-muted">Created on {{doc.created}}</small></p>
-        <p class="card-text"><small class="text-muted">Last updated {{doc.updated}}</small></p>
-      </div>
-    </div>
+<div class="card mb-3">
+  <div class="card-body">
+    <a class="card-link">{{doc.doc_name}}</a>
+    <p class="card-text">{{doc.about}}</p>
+    <p class="card-text"><small class="text-muted">Created on {{doc.created}}</small></p>
+    <p class="card-text"><small class="text-muted">Last updated {{doc.updated}}</small></p>
   </div>
 </div>
 {%endfor%}
