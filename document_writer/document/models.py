@@ -8,6 +8,6 @@ class Document(models.Model):
                                 max_length=120, blank=True, unique=True)
     doc = models.TextField(verbose_name="document")
     about = models.TextField(help_text="Write some description about the document", default="", blank=True)
-    doc_img = models.ImageField(default="/static/doc_image.png", verbose_name="document_img")
+    doc_img = models.ImageField(default="doc_image.png", verbose_name="document_img")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
