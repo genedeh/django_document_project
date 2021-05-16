@@ -3,7 +3,7 @@ from random import randint
 
 
 # Create your models here.
-class Documents(models.Model):
+class Document(models.Model):
     doc_name = models.CharField(verbose_name="document_name", default=f"Document{randint(1029283, 918829102832123)}",
                                 max_length=120, blank=True)
     doc = models.TextField(verbose_name="document")
