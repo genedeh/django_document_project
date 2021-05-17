@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Document
 from django.views.generic import DetailView
 from .forms import DocumentForm
@@ -15,5 +15,11 @@ class DocumentDetailView(DetailView):
 
 
 def new_view(request):
-    form = DocumentForm
-    return render(request, "new.html", {'form':form})
+    if request.method == "POST":
+        form = DocumentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("document:home")
+    else:
+        form = DocumentForm
+    return render(request, "new.html", {'form': form})
