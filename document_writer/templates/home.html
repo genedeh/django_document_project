@@ -9,11 +9,11 @@
 {% block content %}
 <h1>DOCUMENT WRITER</h1>
 <h2>DOCUMENTS</h2>
-<table style="text-align:center;">
-    <a href="" class="link p-3">HOME🏠</a>
+<nav style="text-align:center;">
+    <a href="{% url 'document:home' %}" class="link p-3">HOME🏠</a>
     <br>
     <a href="" class="link p-3">NEW📂</a>
-</table>
+</nav>
 <input type="text" placeholder="search..." class="m-3 ml-4 p-2" style="width:10cm;"> <button class="btn btn-primary" type="submit">SEARCH</button>
 <br>
 {%for doc in document %}

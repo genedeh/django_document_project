@@ -4,16 +4,20 @@
 {% endblock title %}
 
 {% block content %}
-
+<nav style="text-align:center;">
+    <a href="{% url 'document:home' %}" class="link p-3">HOME🏠</a>
+    <br>
+    <a href="" class="link p-3">NEW📂</a>
+</nav>
 <h1 style="text-align:center;" class="text-primary">{{object.doc_name}}</h1>
 <hr>
 <h2 class="text-secondary">Created on {{object.created}} and last Updated on {{object.updated}}</h2>
 <img src="/media/{{object.doc_img}}" alt="" width="50" height="50">
 <h3 style="text-align:center">{{object.doc_name}}</h3>
-<p>
+<p style="text-align:center;">
     {{object.doc}}
 </p>
 <hr>
 <h4>About</h4>
-<b class="text-secondary">{{object.about}}</b>
+<b class="text-secondary" style="text-align:center;">{{object.about}}</b>
 {% endblock content %}
