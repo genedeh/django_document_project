@@ -11,3 +11,7 @@ def home_view(request):
 class DocumentDetailView(DetailView):
     model = Document
     template_name = r'C:\Users\Genesis\PycharmProjects\django_practice\document_writer\templates\detail.html'
+
+
+def new_view(request):
+    return render(request, "new.html")
