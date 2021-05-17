@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Document
 from django.views.generic import DetailView
+from .forms import DocumentForm
 
 
 # Create your views here.
@@ -14,4 +15,5 @@ class DocumentDetailView(DetailView):
 
 
 def new_view(request):
-    return render(request, "new.html")
+    form = DocumentForm
+    return render(request, "new.html", {'form':form})
