@@ -7,7 +7,7 @@
 <nav style="text-align:center;">
     <a href="{% url 'document:home' %}" class="link p-3">HOME🏠</a>
     <br>
-    <a href="" class="link p-3">NEW📂</a>
+    <a href="{% url 'document:new' %}" class="link p-3">NEW📂</a>
 </nav>
 <h1 style="text-align:center;" class="text-primary">{{object.doc_name}}</h1>
 <hr>
