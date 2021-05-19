@@ -21,6 +21,7 @@
   <div class="card-body">
     <a class="card-link" href="{{doc.get_absolute_url}}">{{doc.doc_name}}</a>
     <p class="card-text">{{doc.about}}</p>
+      <a href="{{doc.id}}/delete" class="btn btn-danger">DELETE</a>
     <p class="card-text"><small class="text-muted">Created on {{doc.created}}</small></p>
     <p class="card-text"><small class="text-muted">Last updated {{doc.updated}}</small></p>
   </div>
