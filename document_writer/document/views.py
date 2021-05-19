@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Document
 from django.views.generic import DetailView
 from .forms import DocumentForm
@@ -36,3 +37,21 @@ def new_view(request):
     else:
         form = DocumentForm
     return render(request, "new.html", {'form': form})
+
+
+def delete_view(request, id):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+
+    # fetch the object related to passed id
+    obj = get_object_or_404(Document, id=id)
+
+    if request.method == "POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/")
+
+    return render(request, "delete.html", context)
