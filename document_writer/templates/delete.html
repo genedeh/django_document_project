@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST" style="text-align:center;">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <h1>Do you want to Delete this Item ?</h1>
+        <input type="submit" value="Yes" style="background-color:red;" />
+        <a href="/" >Cancel </a>
+    </form>
+</div>
+{% endblock content %}
+</body>
+</html>
