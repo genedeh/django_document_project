@@ -13,9 +13,22 @@ NEW
     <br>
     <a href="{% url 'document:new' %}" class="link p-3">NEW📂</a>
 </nav>
-<form action="" method="post" style="text-align:center;" class="bg-primary text-white">
+<form action="" method="post" class="text-white">
     {% csrf_token %}
-        {{form|crispy}}
+    <div class="row">
+        <div class="col-6 m-3">
+            {{ form.doc_name|as_crispy_field }}
+        </div>
+        <div class="col-6 m-3">
+            {{ form.doc|as_crispy_field }}
+        </div>
+        <div class="col-6 m-3">
+            {{ form.about|as_crispy_field }}
+        </div>
+        <div class="col-6 m-3">
+            {{ form.doc_img|as_crispy_field }}
+        </div>
+    </div>
     <button class="text-white btn btn-dark m-3">CREATE</button>
 </form>
 {% endblock content %}
