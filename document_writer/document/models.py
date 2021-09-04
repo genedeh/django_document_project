@@ -4,7 +4,7 @@ from random import randint
 
 # Create your models here.
 from django.urls import reverse
-from fpdf import FPDF
+# from fpdf import FPDF
 
 
 class Document(models.Model):

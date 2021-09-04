@@ -1,3 +1,5 @@
+import os
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Document
@@ -13,7 +15,7 @@ def home_view(request):
 
 class DocumentDetailView(DetailView):
     model = Document
-    template_name = r'C:\Users\Genesis\PycharmProjects\django_practice\document_writer\templates\detail.html'
+    template_name = 'detail.html'
 
 
 def new_view(request):
@@ -49,6 +51,7 @@ def delete_view(request, id):
 
     if request.method == "POST":
         # delete object
+        os.remove(f'static/{obj.doc_name}.pdf')
         obj.delete()
         # after deleting redirect to
         # home page
